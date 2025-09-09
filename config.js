@@ -5,8 +5,8 @@ const CONFIG = {
     // Facebook App Configuration
     // Get these from https://developers.facebook.com/
     facebook: {
-        appId: 'YOUR_FACEBOOK_APP_ID',
-        appSecret: 'YOUR_FACEBOOK_APP_SECRET', // Keep this secure, use only server-side
+        appId: '777554551649291',
+        appSecret: '32f5a0e9443f31ff7a1951ec9831fc41', // Keep this secure, use only server-side
         version: 'v18.0'
     },
     
@@ -92,3 +92,4 @@ if (CONFIG.settings.enableDebugMode && typeof console !== 'undefined') {
         console.warn('Configuration warnings:', configErrors);
     }
 }
+
