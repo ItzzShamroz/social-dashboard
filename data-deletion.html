@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Deletion Instructions - Social Media Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .deletion-header {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 4rem 0;
+        }
+        .deletion-content {
+            padding: 3rem 0;
+        }
+        .section-title {
+            color: #2c3e50;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .step-card {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .step-number {
+            background: #e74c3c;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        .info-box {
+            background-color: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(231, 76, 60, 0.9);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: rgba(231, 76, 60, 1);
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to App Button -->
+    <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left me-2"></i>Back to App
+    </a>
+
+    <!-- Header -->
+    <section class="deletion-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 mb-3">
+                        <i class="fas fa-trash-alt me-3"></i>
+                        Data Deletion Instructions
+                    </h1>
+                    <p class="lead">How to delete your data from Social Media Dashboard</p>
+                    <p class="mb-0">Complete guide to removing your information from our service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="deletion-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    
+                    <!-- Introduction -->
+                    <div class="mb-5">
+                        <h2 class="section-title">Overview</h2>
+                        <p class="lead">We respect your right to control your personal data. This page provides clear instructions on how to delete your data from our Social Media Dashboard application.</p>
+                        
+                        <div class="info-box">
+                            <h5><i class="fas fa-info-circle text-info me-2"></i>Your Data Rights</h5>
+                            <p class="mb-0">Under various privacy laws (GDPR, CCPA, etc.), you have the right to request deletion of your personal data. We provide multiple ways to exercise this right.</p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="mb-5">
+                        <h2 class="section-title">Quick Actions</h2>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100 border-primary">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-sign-out-alt fa-3x text-primary mb-3"></i>
+                                        <h5>Disconnect Account</h5>
+                                        <p class="text-muted">Remove access from within the app</p>
+                                        <a href="index.html" class="btn btn-outline-primary">Go to Dashboard</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100 border-danger">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-envelope fa-3x text-danger mb-3"></i>
+                                        <h5>Request Deletion</h5>
+                                        <p class="text-muted">Email us for complete data removal</p>
+                                        <a href="mailto:privacy@socialmedia-dashboard.com?subject=Data%20Deletion%20Request" class="btn btn-outline-danger">Send Email</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step-by-Step Instructions -->
+                    <div class="mb-5">
+                        <h2 class="section-title">Step-by-Step Deletion Process</h2>
+                        
+                        <!-- Step 1 -->
+                        <div class="step-card">
+                            <div class="d-flex align-items-start">
+                                <div class="step-number">1</div>
+                                <div>
+                                    <h5>Disconnect from the App</h5>
+                                    <p class="mb-3">First, disconnect your Facebook and Instagram accounts from our application:</p>
+                                    <ul>
+                                        <li>Open the Social Media Dashboard</li>
+                                        <li>Click your profile picture in the top-right corner</li>
+                                        <li>Select "Logout" from the dropdown menu</li>
+                                        <li>This will immediately disconnect your accounts</li>
+                                    </ul>
+                                    <div class="alert alert-info mt-3">
+                                        <i class="fas fa-lightbulb me-2"></i>
+                                        <strong>Note:</strong> Logging out stops all data collection but doesn't delete existing data.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="step-card">
+                            <div class="d-flex align-items-start">
+                                <div class="step-number">2</div>
+                                <div>
+                                    <h5>Revoke Facebook Permissions</h5>
+                                    <p class="mb-3">Remove our app's access from your Facebook settings:</p>
+                                    <ul>
+                                        <li>Go to <a href="https://facebook.com/settings?tab=applications" target="_blank">Facebook Settings → Apps and Websites</a></li>
+                                        <li>Find "Social Media Dashboard" in your app list</li>
+                                        <li>Click "Remove" to revoke all permissions</li>
+                                        <li>Confirm the removal when prompted</li>
+                                    </ul>
+                                    <div class="alert alert-warning mt-3">
+                                        <i class="fas fa-exclamation-triangle me-2"></i>
+                                        <strong>Important:</strong> This prevents future access but doesn't delete stored data.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="step-card">
+                            <div class="d-flex align-items-start">
+                                <div class="step-number">3</div>
+                                <div>
+                                    <h5>Request Complete Data Deletion</h5>
+                                    <p class="mb-3">To permanently delete all your data from our systems:</p>
+                                    <div class="bg-light p-3 rounded mb-3">
+                                        <h6><i class="fas fa-envelope text-primary me-2"></i>Email Request</h6>
+                                        <p class="mb-2"><strong>Send to:</strong> <a href="mailto:privacy@socialmedia-dashboard.com">privacy@socialmedia-dashboard.com</a></p>
+                                        <p class="mb-2"><strong>Subject:</strong> Data Deletion Request</p>
+                                        <p class="mb-0"><strong>Include:</strong></p>
+                                        <ul class="mt-2">
+                                            <li>Your name and email address used with our service</li>
+                                            <li>Facebook/Instagram usernames (if comfortable sharing)</li>
+                                            <li>Request for complete data deletion</li>
+                                            <li>Any specific data concerns</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="step-card">
+                            <div class="d-flex align-items-start">
+                                <div class="step-number">4</div>
+                                <div>
+                                    <h5>Confirmation and Timeline</h5>
+                                    <p class="mb-3">After submitting your request:</p>
+                                    <ul>
+                                        <li><strong>Acknowledgment:</strong> We'll confirm receipt within 24 hours</li>
+                                        <li><strong>Verification:</strong> We may ask for identity verification</li>
+                                        <li><strong>Processing:</strong> Deletion completed within 30 days</li>
+                                        <li><strong>Confirmation:</strong> You'll receive final confirmation email</li>
+                                    </ul>
+                                    
+                                    <div class="row mt-4">
+                                        <div class="col-md-6">
+                                            <div class="alert alert-success">
+                                                <h6><i class="fas fa-check-circle me-2"></i>What Gets Deleted</h6>
+                                                <ul class="mb-0 small">
+                                                    <li>Profile information</li>
+                                                    <li>Social media metrics</li>
+                                                    <li>Usage logs</li>
+                                                    <li>Account preferences</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="alert alert-warning">
+                                                <h6><i class="fas fa-info-circle me-2"></i>What May Remain</h6>
+                                                <ul class="mb-0 small">
+                                                    <li>Legal compliance records</li>
+                                                    <li>Security logs (anonymized)</li>
+                                                    <li>Aggregated analytics</li>
+                                                    <li>Support communications</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alternative Methods -->
+                    <div class="mb-5">
+                        <h2 class="section-title">Alternative Deletion Methods</h2>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-header bg-primary text-white">
+                                        <h5><i class="fas fa-phone me-2"></i>Contact Support</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Prefer to speak with someone directly?</p>
+                                        <ul>
+                                            <li><strong>Email:</strong> support@socialmedia-dashboard.com</li>
+                                            <li><strong>Response Time:</strong> Within 24 hours</li>
+                                            <li><strong>Available:</strong> Monday-Friday, 9 AM-5 PM</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-header bg-info text-white">
+                                        <h5><i class="fas fa-file-alt me-2"></i>Written Request</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Send a formal written request to:</p>
+                                        <address class="small">
+                                            <strong>Social Media Dashboard</strong><br>
+                                            Data Protection Officer<br>
+                                            [Your Address]<br>
+                                            [City, State, ZIP Code]<br>
+                                            [Country]
+                                        </address>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Important Information -->
+                    <div class="mb-5">
+                        <h2 class="section-title">Important Information</h2>
+                        
+                        <div class="warning-box">
+                            <h5><i class="fas fa-exclamation-triangle text-warning me-2"></i>Before You Delete</h5>
+                            <p class="mb-3">Please consider the following before requesting data deletion:</p>
+                            <ul class="mb-0">
+                                <li>Deletion is permanent and cannot be undone</li>
+                                <li>You'll lose access to all historical data and analytics</li>
+                                <li>Some data may be retained for legal or security purposes</li>
+                                <li>You can always reconnect later, but historical data won't be recovered</li>
+                            </ul>
+                        </div>
+
+                        <h4 class="mt-4 mb-3">Data Retention Policy</h4>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Data Type</th>
+                                        <th>Standard Retention</th>
+                                        <th>After Deletion Request</th>
+                                        <th>Legal Holds</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Profile Data</td>
+                                        <td>Until account closure</td>
+                                        <td>Deleted within 30 days</td>
+                                        <td>As required by law</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Social Media Metrics</td>
+                                        <td>90 days</td>
+                                        <td>Immediately deleted</td>
+                                        <td>Not applicable</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Usage Logs</td>
+                                        <td>180 days</td>
+                                        <td>Anonymized within 30 days</td>
+                                        <td>Up to 7 years</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Support Communications</td>
+                                        <td>2 years</td>
+                                        <td>Anonymized within 90 days</td>
+                                        <td>As required</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- FAQ -->
+                    <div class="mb-5">
+                        <h2 class="section-title">Frequently Asked Questions</h2>
+                        
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="faq1">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1">
+                                        How long does data deletion take?
+                                    </button>
+                                </h2>
+                                <div id="faqCollapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Most data is deleted within 30 days of your request. Some anonymized data for legal compliance may be retained longer as required by law.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="faq2">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2">
+                                        Can I recover my data after deletion?
+                                    </button>
+                                </h2>
+                                <div id="faqCollapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        No, data deletion is permanent. Once deleted, we cannot recover your historical data, analytics, or settings.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="faq3">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3">
+                                        What if I only want to delete some data?
+                                    </button>
+                                </h2>
+                                <div id="faqCollapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        You can request partial data deletion by specifying which data types you want removed in your email request. We'll work with you to accommodate reasonable requests.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="faq4">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4">
+                                        Do I need to delete data from Facebook too?
+                                    </button>
+                                </h2>
+                                <div id="faqCollapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        We only store limited data from Facebook/Instagram. Deleting from our service doesn't affect your social media accounts. You should manage those separately through Facebook and Instagram settings.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Section -->
+                    <div class="bg-light p-4 rounded">
+                        <h2 class="section-title">Need Help?</h2>
+                        <p>If you have any questions about data deletion or need assistance with the process:</p>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-envelope text-primary me-2"></i>Privacy Team</h5>
+                                <p><a href="mailto:privacy@socialmedia-dashboard.com">privacy@socialmedia-dashboard.com</a></p>
+                                
+                                <h5><i class="fas fa-headset text-success me-2"></i>Support Team</h5>
+                                <p><a href="mailto:support@socialmedia-dashboard.com">support@socialmedia-dashboard.com</a></p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-clock text-info me-2"></i>Response Times</h5>
+                                <ul>
+                                    <li>Privacy requests: 24 hours</li>
+                                    <li>General support: 48 hours</li>
+                                    <li>Data deletion: 30 days maximum</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="text-center mt-5 pt-4 border-top">
+                        <p class="text-muted">
+                            <strong>Last Updated:</strong> <span id="lastUpdated"></span><br>
+                            <small>© 2024 Social Media Dashboard. All rights reserved.</small>
+                        </p>
+                        <p class="mt-3">
+                            <a href="privacy-policy.html" class="text-decoration-none me-3">Privacy Policy</a>
+                            <a href="terms-of-service.html" class="text-decoration-none">Terms of Service</a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Set current date
+        const today = new Date().toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+        document.getElementById('lastUpdated').textContent = today;
+    </script>
+</body>
+</html>

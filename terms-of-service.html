@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Social Media Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .terms-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+        }
+        .terms-content {
+            padding: 3rem 0;
+        }
+        .section-title {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .highlight-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(0, 123, 255, 0.9);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: rgba(0, 123, 255, 1);
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to App Button -->
+    <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left me-2"></i>Back to App
+    </a>
+
+    <!-- Header -->
+    <section class="terms-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 mb-3">
+                        <i class="fas fa-file-contract me-3"></i>
+                        Terms of Service
+                    </h1>
+                    <p class="lead">Social Media Dashboard</p>
+                    <p class="mb-0"><strong>Last Updated:</strong> <span id="lastUpdated"></span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms Content -->
+    <section class="terms-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    
+                    <!-- Introduction -->
+                    <div class="mb-5">
+                        <h2 class="section-title">1. Agreement to Terms</h2>
+                        <p class="lead">Welcome to Social Media Dashboard. These Terms of Service ("Terms") govern your use of our application and services.</p>
+                        
+                        <div class="highlight-box">
+                            <h5><i class="fas fa-handshake text-primary me-2"></i>Binding Agreement</h5>
+                            <p class="mb-0">By accessing or using our Social Media Dashboard application, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these terms, please do not use our service.</p>
+                        </div>
+                    </div>
+
+                    <!-- Service Description -->
+                    <div class="mb-5">
+                        <h2 class="section-title">2. Description of Service</h2>
+                        <p>Social Media Dashboard is a web application that allows users to:</p>
+                        <ul>
+                            <li>Connect their Facebook and Instagram accounts</li>
+                            <li>View follower counts and engagement metrics</li>
+                            <li>Monitor growth statistics across platforms</li>
+                            <li>Access a unified dashboard for social media analytics</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h5><i class="fas fa-exclamation-triangle text-warning me-2"></i>Service Availability</h5>
+                            <p class="mb-0">Our service is provided "as is" and we do not guarantee continuous, uninterrupted access. We may modify, suspend, or discontinue the service at any time.</p>
+                        </div>
+                    </div>
+
+                    <!-- User Obligations -->
+                    <div class="mb-5">
+                        <h2 class="section-title">3. User Obligations and Conduct</h2>
+                        
+                        <h4 class="mt-4 mb-3">3.1 Eligibility</h4>
+                        <p>To use our service, you must:</p>
+                        <ul>
+                            <li>Be at least 13 years of age</li>
+                            <li>Have valid Facebook and/or Instagram accounts</li>
+                            <li>Provide accurate and complete information</li>
+                            <li>Comply with all applicable laws and regulations</li>
+                        </ul>
+
+                        <h4 class="mt-4 mb-3">3.2 Prohibited Activities</h4>
+                        <p>You agree not to:</p>
+                        <ul>
+                            <li>Use the service for any unlawful purpose</li>
+                            <li>Attempt to gain unauthorized access to our systems</li>
+                            <li>Interfere with the proper functioning of the service</li>
+                            <li>Use automated tools to access the service without permission</li>
+                            <li>Share your account credentials with others</li>
+                            <li>Violate Facebook's or Instagram's terms of service</li>
+                        </ul>
+
+                        <h4 class="mt-4 mb-3">3.3 Account Security</h4>
+                        <p>You are responsible for:</p>
+                        <ul>
+                            <li>Maintaining the security of your social media accounts</li>
+                            <li>All activities that occur through your account</li>
+                            <li>Immediately notifying us of any unauthorized access</li>
+                        </ul>
+                    </div>
+
+                    <!-- Third Party Services -->
+                    <div class="mb-5">
+                        <h2 class="section-title">4. Third-Party Services</h2>
+                        
+                        <h4 class="mt-4 mb-3">4.1 Facebook and Instagram Integration</h4>
+                        <p>Our service integrates with Facebook and Instagram through their official APIs. By using our service, you also agree to:</p>
+                        <ul>
+                            <li><a href="https://www.facebook.com/terms.php" target="_blank">Facebook Terms of Service</a></li>
+                            <li><a href="https://help.instagram.com/581066165581870" target="_blank">Instagram Terms of Use</a></li>
+                            <li><a href="https://developers.facebook.com/terms" target="_blank">Facebook Platform Policy</a></li>
+                        </ul>
+
+                        <h4 class="mt-4 mb-3">4.2 Third-Party Limitations</h4>
+                        <p>We are not responsible for:</p>
+                        <ul>
+                            <li>Changes to Facebook or Instagram APIs</li>
+                            <li>Service interruptions caused by third parties</li>
+                            <li>Data accuracy issues from external sources</li>
+                            <li>Third-party terms of service violations</li>
+                        </ul>
+                    </div>
+
+                    <!-- Intellectual Property -->
+                    <div class="mb-5">
+                        <h2 class="section-title">5. Intellectual Property Rights</h2>
+                        
+                        <h4 class="mt-4 mb-3">5.1 Our Rights</h4>
+                        <p>We retain all rights to:</p>
+                        <ul>
+                            <li>The Social Media Dashboard application</li>
+                            <li>Our proprietary code and algorithms</li>
+                            <li>Trademarks, logos, and brand elements</li>
+                            <li>Documentation and user interface designs</li>
+                        </ul>
+
+                        <h4 class="mt-4 mb-3">5.2 Your Rights</h4>
+                        <p>You retain ownership of:</p>
+                        <ul>
+                            <li>Your social media account data</li>
+                            <li>Content you create or post on social platforms</li>
+                            <li>Personal information you provide</li>
+                        </ul>
+
+                        <h4 class="mt-4 mb-3">5.3 License to Use</h4>
+                        <p>We grant you a limited, non-exclusive, non-transferable license to use our service for personal or business purposes in accordance with these Terms.</p>
+                    </div>
+
+                    <!-- Data and Privacy -->
+                    <div class="mb-5">
+                        <h2 class="section-title">6. Data Handling and Privacy</h2>
+                        <p>Our data practices are governed by our <a href="privacy-policy.html">Privacy Policy</a>, which is incorporated into these Terms by reference.</p>
+
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-database text-primary me-2"></i>Data Collection</h5>
+                                <ul>
+                                    <li>Only necessary data is collected</li>
+                                    <li>Transparent about data usage</li>
+                                    <li>Secure data storage practices</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-user-shield text-success me-2"></i>User Rights</h5>
+                                <ul>
+                                    <li>Access your data anytime</li>
+                                    <li>Request data deletion</li>
+                                    <li>Control data sharing settings</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Availability -->
+                    <div class="mb-5">
+                        <h2 class="section-title">7. Service Availability and Modifications</h2>
+                        
+                        <h4 class="mt-4 mb-3">7.1 Availability</h4>
+                        <p>We strive to provide reliable service but cannot guarantee:</p>
+                        <ul>
+                            <li>100% uptime or availability</li>
+                            <li>Uninterrupted access to third-party APIs</li>
+                            <li>Error-free operation at all times</li>
+                        </ul>
+
+                        <h4 class="mt-4 mb-3">7.2 Modifications</h4>
+                        <p>We reserve the right to:</p>
+                        <ul>
+                            <li>Modify or discontinue features</li>
+                            <li>Update the application interface</li>
+                            <li>Change these Terms with notice</li>
+                            <li>Suspend service for maintenance</li>
+                        </ul>
+
+                        <h4 class="mt-4 mb-3">7.3 Termination</h4>
+                        <p>Either party may terminate this agreement:</p>
+                        <ul>
+                            <li><strong>By You:</strong> Stop using the service at any time</li>
+                            <li><strong>By Us:</strong> With or without cause, with reasonable notice</li>
+                            <li><strong>Automatic:</strong> Upon violation of these Terms</li>
+                        </ul>
+                    </div>
+
+                    <!-- Disclaimers -->
+                    <div class="mb-5">
+                        <h2 class="section-title">8. Disclaimers and Limitations</h2>
+                        
+                        <div class="warning-box">
+                            <h5><i class="fas fa-exclamation-circle text-warning me-2"></i>Important Legal Notice</h5>
+                            <p class="mb-0">The following disclaimers and limitations may not apply in all jurisdictions. Please consult local laws for your specific rights.</p>
+                        </div>
+
+                        <h4 class="mt-4 mb-3">8.1 Service Disclaimer</h4>
+                        <p>Our service is provided "AS IS" and "AS AVAILABLE" without warranties of any kind, either express or implied, including but not limited to:</p>
+                        <ul>
+                            <li>Merchantability and fitness for a particular purpose</li>
+                            <li>Non-infringement of intellectual property</li>
+                            <li>Accuracy or reliability of data</li>
+                            <li>Continuous, uninterrupted operation</li>
+                        </ul>
+
+                        <h4 class="mt-4 mb-3">8.2 Limitation of Liability</h4>
+                        <p>To the maximum extent permitted by law, we shall not be liable for:</p>
+                        <ul>
+                            <li>Indirect, incidental, or consequential damages</li>
+                            <li>Loss of profits, revenue, or business opportunities</li>
+                            <li>Data loss or corruption</li>
+                            <li>Third-party service interruptions</li>
+                        </ul>
+
+                        <p>Our total liability shall not exceed the amount paid by you for the service in the 12 months preceding the claim.</p>
+                    </div>
+
+                    <!-- Indemnification -->
+                    <div class="mb-5">
+                        <h2 class="section-title">9. Indemnification</h2>
+                        <p>You agree to indemnify and hold harmless Social Media Dashboard, its officers, directors, employees, and agents from any claims, damages, losses, or expenses arising from:</p>
+                        <ul>
+                            <li>Your use of the service</li>
+                            <li>Your violation of these Terms</li>
+                            <li>Your violation of third-party rights</li>
+                            <li>Your violation of applicable laws</li>
+                        </ul>
+                    </div>
+
+                    <!-- Governing Law -->
+                    <div class="mb-5">
+                        <h2 class="section-title">10. Governing Law and Dispute Resolution</h2>
+                        
+                        <h4 class="mt-4 mb-3">10.1 Governing Law</h4>
+                        <p>These Terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to conflict of law principles.</p>
+
+                        <h4 class="mt-4 mb-3">10.2 Dispute Resolution</h4>
+                        <p>Any disputes arising from these Terms shall be resolved through:</p>
+                        <ol>
+                            <li><strong>Direct Communication:</strong> Good faith negotiation between parties</li>
+                            <li><strong>Mediation:</strong> Non-binding mediation if direct communication fails</li>
+                            <li><strong>Legal Action:</strong> Courts of competent jurisdiction in [Your Jurisdiction]</li>
+                        </ol>
+
+                        <h4 class="mt-4 mb-3">10.3 Class Action Waiver</h4>
+                        <p>You agree that any dispute resolution proceedings will be conducted on an individual basis and not as part of a class, consolidated, or representative action.</p>
+                    </div>
+
+                    <!-- General Provisions -->
+                    <div class="mb-5">
+                        <h2 class="section-title">11. General Provisions</h2>
+                        
+                        <h4 class="mt-4 mb-3">11.1 Entire Agreement</h4>
+                        <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and us regarding your use of the service.</p>
+
+                        <h4 class="mt-4 mb-3">11.2 Severability</h4>
+                        <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</p>
+
+                        <h4 class="mt-4 mb-3">11.3 Waiver</h4>
+                        <p>Our failure to enforce any provision of these Terms shall not constitute a waiver of such provision or any other provision.</p>
+
+                        <h4 class="mt-4 mb-3">11.4 Assignment</h4>
+                        <p>You may not assign your rights or obligations under these Terms without our written consent. We may assign our rights and obligations without restriction.</p>
+
+                        <h4 class="mt-4 mb-3">11.5 Force Majeure</h4>
+                        <p>We shall not be liable for any failure or delay in performance due to circumstances beyond our reasonable control.</p>
+                    </div>
+
+                    <!-- Updates to Terms -->
+                    <div class="mb-5">
+                        <h2 class="section-title">12. Changes to Terms</h2>
+                        <p>We may update these Terms from time to time. When we do, we will:</p>
+                        <ul>
+                            <li>Post the updated Terms on this page</li>
+                            <li>Update the "Last Updated" date</li>
+                            <li>Notify users of significant changes via email</li>
+                            <li>Provide reasonable notice before changes take effect</li>
+                        </ul>
+                        
+                        <p>Your continued use of the service after changes become effective constitutes acceptance of the new Terms.</p>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="bg-light p-4 rounded">
+                        <h2 class="section-title">13. Contact Information</h2>
+                        <p>For questions about these Terms of Service, please contact us:</p>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-envelope text-primary me-2"></i>Email</h5>
+                                <p>legal@socialmedia-dashboard.com</p>
+                                
+                                <h5><i class="fas fa-globe text-success me-2"></i>Website</h5>
+                                <p>https://your-domain.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Effective Date -->
+                    <div class="text-center mt-5 pt-4 border-top">
+                        <p class="text-muted">
+                            <strong>These Terms of Service are effective as of <span id="effectiveDate"></span></strong><br>
+                            <small>© 2024 Social Media Dashboard. All rights reserved.</small>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Set current date
+        const today = new Date().toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+        document.getElementById('lastUpdated').textContent = today;
+        document.getElementById('effectiveDate').textContent = today;
+    </script>
+</body>
+</html>

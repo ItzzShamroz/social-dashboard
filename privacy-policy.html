@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Social Media Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .privacy-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+        }
+        .privacy-content {
+            padding: 3rem 0;
+        }
+        .section-title {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .highlight-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        .contact-info {
+            background-color: #e9ecef;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+        }
+        .data-table {
+            margin: 1rem 0;
+        }
+        .navbar-brand {
+            font-weight: 600;
+        }
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(0, 123, 255, 0.9);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: rgba(0, 123, 255, 1);
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to App Button -->
+    <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left me-2"></i>Back to App
+    </a>
+
+    <!-- Header -->
+    <section class="privacy-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 mb-3">
+                        <i class="fas fa-shield-alt me-3"></i>
+                        Privacy Policy
+                    </h1>
+                    <p class="lead">Social Media Dashboard</p>
+                    <p class="mb-0"><strong>Last Updated:</strong> <span id="lastUpdated"></span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Content -->
+    <section class="privacy-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    
+                    <!-- Introduction -->
+                    <div class="mb-5">
+                        <h2 class="section-title">1. Introduction</h2>
+                        <p class="lead">Welcome to Social Media Dashboard ("we," "our," or "us"). We are committed to protecting your privacy and ensuring transparency about how we collect, use, and protect your information.</p>
+                        
+                        <div class="highlight-box">
+                            <h5><i class="fas fa-info-circle text-primary me-2"></i>Important Notice</h5>
+                            <p class="mb-0">This privacy policy applies to the Social Media Dashboard application and describes how we handle data from Facebook and Instagram when you use our service.</p>
+                        </div>
+                        
+                        <p>By using our application, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use our application.</p>
+                    </div>
+
+                    <!-- Information We Collect -->
+                    <div class="mb-5">
+                        <h2 class="section-title">2. Information We Collect</h2>
+                        
+                        <h4 class="mt-4 mb-3">2.1 Facebook Data</h4>
+                        <p>When you connect your Facebook account, we may collect:</p>
+                        <ul>
+                            <li><strong>Basic Profile Information:</strong> Your name, email address, and profile picture</li>
+                            <li><strong>Page Data:</strong> Information about Facebook pages you manage, including follower counts and engagement metrics</li>
+                            <li><strong>Public Profile Data:</strong> Publicly available information from your Facebook profile</li>
+                        </ul>
+
+                        <h4 class="mt-4 mb-3">2.2 Instagram Data</h4>
+                        <p>When you connect your Instagram account, we may collect:</p>
+                        <ul>
+                            <li><strong>Basic Profile Information:</strong> Username, account type, and profile information</li>
+                            <li><strong>Follower Metrics:</strong> Number of followers and following</li>
+                            <li><strong>Media Information:</strong> Count and basic metadata of your posts</li>
+                        </ul>
+
+                        <h4 class="mt-4 mb-3">2.3 Usage Data</h4>
+                        <p>We automatically collect certain information when you use our application:</p>
+                        <ul>
+                            <li>Device information (browser type, operating system)</li>
+                            <li>Usage patterns and interaction data</li>
+                            <li>Log data (IP address, access times, pages viewed)</li>
+                        </ul>
+
+                        <div class="table-responsive data-table">
+                            <table class="table table-striped">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Data Type</th>
+                                        <th>Purpose</th>
+                                        <th>Facebook Permission</th>
+                                        <th>Retention Period</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Profile Information</td>
+                                        <td>User identification and personalization</td>
+                                        <td>email, public_profile</td>
+                                        <td>Until account deletion</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Page Metrics</td>
+                                        <td>Display follower statistics</td>
+                                        <td>pages_read_engagement</td>
+                                        <td>90 days</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Instagram Data</td>
+                                        <td>Display Instagram statistics</td>
+                                        <td>instagram_basic</td>
+                                        <td>90 days</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- How We Use Information -->
+                    <div class="mb-5">
+                        <h2 class="section-title">3. How We Use Your Information</h2>
+                        <p>We use the collected information for the following purposes:</p>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-chart-line text-success me-2"></i>Analytics & Display</h5>
+                                <ul>
+                                    <li>Display your social media follower counts</li>
+                                    <li>Show engagement metrics and growth statistics</li>
+                                    <li>Provide dashboard functionality</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-cogs text-info me-2"></i>Service Operation</h5>
+                                <ul>
+                                    <li>Maintain and improve our application</li>
+                                    <li>Provide customer support</li>
+                                    <li>Ensure security and prevent fraud</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="highlight-box mt-4">
+                            <h5><i class="fas fa-lock text-warning me-2"></i>Data Minimization Principle</h5>
+                            <p class="mb-0">We only collect and process the minimum amount of data necessary to provide our service. We do not use your data for advertising purposes or sell it to third parties.</p>
+                        </div>
+                    </div>
+
+                    <!-- Data Sharing -->
+                    <div class="mb-5">
+                        <h2 class="section-title">4. Data Sharing and Disclosure</h2>
+                        
+                        <h4 class="mt-4 mb-3">4.1 We DO NOT Share Your Data</h4>
+                        <p>We do not sell, trade, or rent your personal information to third parties. Your social media data remains private and is only used to provide the dashboard functionality you requested.</p>
+
+                        <h4 class="mt-4 mb-3">4.2 Limited Exceptions</h4>
+                        <p>We may disclose your information only in the following limited circumstances:</p>
+                        <ul>
+                            <li><strong>Legal Requirements:</strong> When required by law or court order</li>
+                            <li><strong>Safety:</strong> To protect the rights, property, or safety of our users</li>
+                            <li><strong>Business Transfer:</strong> In connection with a merger, acquisition, or asset sale</li>
+                        </ul>
+
+                        <h4 class="mt-4 mb-3">4.3 Service Providers</h4>
+                        <p>We may employ third-party companies to facilitate our service. These third parties have access to your data only to perform specific tasks on our behalf and are obligated not to disclose or use it for other purposes.</p>
+                    </div>
+
+                    <!-- Data Security -->
+                    <div class="mb-5">
+                        <h2 class="section-title">5. Data Security</h2>
+                        
+                        <div class="row">
+                            <div class="col-md-4 text-center">
+                                <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                                <h5>Encryption</h5>
+                                <p>All data transmission is encrypted using SSL/TLS protocols.</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <i class="fas fa-server fa-3x text-success mb-3"></i>
+                                <h5>Secure Storage</h5>
+                                <p>Data is stored on secure servers with restricted access.</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <i class="fas fa-key fa-3x text-warning mb-3"></i>
+                                <h5>Access Control</h5>
+                                <p>Strict access controls and authentication mechanisms.</p>
+                            </div>
+                        </div>
+
+                        <div class="highlight-box">
+                            <h5><i class="fas fa-exclamation-triangle text-danger me-2"></i>Security Limitation</h5>
+                            <p class="mb-0">While we implement industry-standard security measures, no method of transmission over the Internet or electronic storage is 100% secure. We cannot guarantee absolute security.</p>
+                        </div>
+                    </div>
+
+                    <!-- User Rights -->
+                    <div class="mb-5">
+                        <h2 class="section-title">6. Your Rights and Choices</h2>
+                        
+                        <h4 class="mt-4 mb-3">6.1 Access and Control</h4>
+                        <p>You have the following rights regarding your personal data:</p>
+                        <ul>
+                            <li><strong>Access:</strong> Request a copy of your personal data</li>
+                            <li><strong>Correction:</strong> Request correction of inaccurate data</li>
+                            <li><strong>Deletion:</strong> Request deletion of your data</li>
+                            <li><strong>Portability:</strong> Request a copy of your data in a portable format</li>
+                        </ul>
+
+                        <h4 class="mt-4 mb-3">6.2 Account Disconnection</h4>
+                        <p>You can disconnect your Facebook and Instagram accounts at any time:</p>
+                        <ul>
+                            <li>Use the logout function in our application</li>
+                            <li>Revoke permissions in your Facebook settings</li>
+                            <li>Contact us to permanently delete your data</li>
+                        </ul>
+
+                        <h4 class="mt-4 mb-3">6.3 Data Retention</h4>
+                        <p>We retain your data only as long as necessary to provide our service:</p>
+                        <ul>
+                            <li><strong>Active Use:</strong> Data retained while you use our service</li>
+                            <li><strong>After Disconnection:</strong> Data deleted within 30 days</li>
+                            <li><strong>Legal Requirements:</strong> Some data may be retained longer if required by law</li>
+                        </ul>
+                    </div>
+
+                    <!-- Facebook/Instagram Specific -->
+                    <div class="mb-5">
+                        <h2 class="section-title">7. Facebook and Instagram Integration</h2>
+                        
+                        <h4 class="mt-4 mb-3">7.1 Platform Policies</h4>
+                        <p>Our application complies with:</p>
+                        <ul>
+                            <li><a href="https://developers.facebook.com/policy" target="_blank">Facebook Platform Policy</a></li>
+                            <li><a href="https://help.instagram.com/581066165581870" target="_blank">Instagram Platform Policy</a></li>
+                            <li><a href="https://developers.facebook.com/terms" target="_blank">Facebook Developer Terms</a></li>
+                        </ul>
+
+                        <h4 class="mt-4 mb-3">7.2 Permissions Requested</h4>
+                        <p>We request the following permissions:</p>
+                        <ul>
+                            <li><strong>email:</strong> To identify your account</li>
+                            <li><strong>public_profile:</strong> To display your name and profile picture</li>
+                            <li><strong>pages_read_engagement:</strong> To access Facebook page metrics</li>
+                            <li><strong>instagram_basic:</strong> To access Instagram profile information</li>
+                        </ul>
+
+                        <h4 class="mt-4 mb-3">7.3 Data from Facebook</h4>
+                        <p>This application receives data from Facebook. You can control what data you share through your Facebook privacy settings and by managing your app permissions.</p>
+                    </div>
+
+                    <!-- Children's Privacy -->
+                    <div class="mb-5">
+                        <h2 class="section-title">8. Children's Privacy</h2>
+                        <p>Our service is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
+                        
+                        <div class="highlight-box">
+                            <h5><i class="fas fa-child text-info me-2"></i>COPPA Compliance</h5>
+                            <p class="mb-0">We are committed to complying with the Children's Online Privacy Protection Act (COPPA) and similar international regulations.</p>
+                        </div>
+                    </div>
+
+                    <!-- International Users -->
+                    <div class="mb-5">
+                        <h2 class="section-title">9. International Data Transfers</h2>
+                        <p>Your information may be transferred to and processed in countries other than your own. These countries may have different data protection laws. By using our service, you consent to such transfers.</p>
+                        
+                        <h4 class="mt-4 mb-3">9.1 GDPR Compliance</h4>
+                        <p>For users in the European Union, we provide additional protections under the General Data Protection Regulation (GDPR):</p>
+                        <ul>
+                            <li>Legal basis for processing your data</li>
+                            <li>Right to data portability</li>
+                            <li>Right to be forgotten</li>
+                            <li>Data protection officer contact</li>
+                        </ul>
+                    </div>
+
+                    <!-- Updates -->
+                    <div class="mb-5">
+                        <h2 class="section-title">10. Policy Updates</h2>
+                        <p>We may update this privacy policy from time to time. We will notify you of any changes by:</p>
+                        <ul>
+                            <li>Posting the new policy on this page</li>
+                            <li>Updating the "Last Updated" date</li>
+                            <li>Sending you an email notification (for significant changes)</li>
+                        </ul>
+                        
+                        <p>You are advised to review this privacy policy periodically for any changes. Changes to this privacy policy are effective when posted on this page.</p>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <h2 class="section-title">11. Contact Us</h2>
+                        <p>If you have any questions about this privacy policy or our data practices, please contact us:</p>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-envelope text-primary me-2"></i>Email</h5>
+                                <p>privacy@socialmedia-dashboard.com</p>
+                                
+                                <h5><i class="fas fa-globe text-success me-2"></i>Website</h5>
+                                <p>https://your-domain.com</p>
+                            </div>
+                           
+                        </div>
+
+                        <div class="alert alert-info mt-3">
+                            <h6><i class="fas fa-clock me-2"></i>Response Time</h6>
+                            <p class="mb-0">We aim to respond to all privacy-related inquiries within 48 hours.</p>
+                        </div>
+                    </div>
+
+                    <!-- Effective Date -->
+                    <div class="text-center mt-5 pt-4 border-top">
+                        <p class="text-muted">
+                            <strong>This Privacy Policy is effective as of <span id="effectiveDate"></span></strong><br>
+                            <small>© 2024 Social Media Dashboard. All rights reserved.</small>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Set current date
+        const today = new Date().toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+        document.getElementById('lastUpdated').textContent = today;
+        document.getElementById('effectiveDate').textContent = today;
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

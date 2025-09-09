@@ -1,0 +1,165 @@
+/* Custom styles for Social Media Dashboard */
+
+/* Login Page Styles */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.login-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-card h2 {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Profile Image in Navbar */
+.profile-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Stats Section */
+.stat-item {
+    padding: 1rem 0;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #6c757d;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Card Animations */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading Spinners */
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Custom Instagram Gradient */
+.ig-gradient {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-card {
+        margin: 1rem;
+        padding: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+}
+
+/* Custom Button Styles */
+.btn-facebook {
+    background-color: #4267B2;
+    border-color: #4267B2;
+    color: white;
+}
+
+.btn-facebook:hover {
+    background-color: #365899;
+    border-color: #365899;
+    color: white;
+}
+
+/* Success/Error States */
+.success-state {
+    color: #28a745;
+}
+
+.error-state {
+    color: #dc3545;
+}
+
+/* Loading States */
+.loading-state {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Fade transitions */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-up {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+    .login-container {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    }
+}
