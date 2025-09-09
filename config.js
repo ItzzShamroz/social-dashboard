@@ -6,8 +6,14 @@ const CONFIG = {
     // Get these from https://developers.facebook.com/
     facebook: {
         appId: '777554551649291',
-        appSecret: '32f5a0e9443f31ff7a1951ec9831fc41', // Keep this secure, use only server-side
-        version: 'v18.0'
+        appSecret: 'YOUR_FACEBOOK_APP_SECRET', // Keep this secure, use only server-side
+        version: 'v18.0',
+        // Scopes needed for Pages + Instagram Graph (ensure your app has these products/permissions):
+        // - pages_show_list (list/manage your Pages)
+        // - pages_read_engagement (read Page fields like followers/likes)
+        // - instagram_basic (read IG user data, including followers_count)
+        // You must add the products/permissions in your app and be a role user to grant them.
+        loginScopes: 'email,public_profile,pages_read_engagement,pages_show_list,instagram_basic'
     },
     
     // Instagram Basic Display API Configuration
@@ -34,7 +40,7 @@ const CONFIG = {
     
     // App Settings
     settings: {
-        autoRefreshInterval: 300000, // 5 minutes in milliseconds
+        autoRefreshInterval: 10000, // 10 seconds
         enableDebugMode: true, // Set to false in production
         maxRetries: 3,
         timeoutDuration: 10000 // 10 seconds
@@ -92,5 +98,3 @@ if (CONFIG.settings.enableDebugMode && typeof console !== 'undefined') {
         console.warn('Configuration warnings:', configErrors);
     }
 }
-
-

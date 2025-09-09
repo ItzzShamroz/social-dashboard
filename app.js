@@ -19,7 +19,7 @@ class SocialMediaDashboard {
         // Setup event listeners
         this.setupEventListeners();
         
-        // Check if user is already logged in
+        // Check login status
         this.checkLoginStatus();
         
         // Update last sync time
@@ -49,7 +49,7 @@ class SocialMediaDashboard {
         // Logout button
         document.getElementById('logoutBtn').addEventListener('click', () => this.logout());
         
-        // Refresh data button
+        // Refresh data button (forces a single pull; SSE continues in background)
         document.getElementById('refreshData').addEventListener('click', () => this.refreshAllData());
     }
 
@@ -64,15 +64,18 @@ class SocialMediaDashboard {
         try {
             const response = await new Promise((resolve) => {
                 FB.login((response) => resolve(response), {
-                    scope: 'email,pages_read_engagement,instagram_basic'
+                    scope: this.config.facebook.loginScopes,
+                    return_scopes: true
                 });
             });
 
             if (response.authResponse) {
+                // Browser-only flow: store user access token and initialize
                 this.accessToken = response.authResponse.accessToken;
+                this.userAccessToken = response.authResponse.accessToken;
                 await this.getUserInfo();
                 this.showDashboard();
-                await this.loadAllData();
+                await this.loadPagesAndStart();
             } else {
                 console.error('Facebook login failed');
                 this.showError('Facebook login was cancelled or failed');
@@ -133,20 +136,17 @@ class SocialMediaDashboard {
 
     async loadAllData() {
         console.log('Loading social media data...');
+        if (!this.config.demo.enabled) {
+            await this.loadPagesAndStart();
+            return;
+        }
         
         try {
-            // Load Facebook data
+            // Demo data
             await this.loadFacebookData();
-            
-            // Load Instagram data
             await this.loadInstagramData();
-            
-            // Update combined stats
             this.updateCombinedStats();
-            
-            // Set up auto-refresh
             this.setupAutoRefresh();
-            
         } catch (error) {
             console.error('Error loading data:', error);
         }
@@ -311,6 +311,127 @@ class SocialMediaDashboard {
         document.getElementById('lastSync').textContent = '0m';
     }
 
+    async loadPagesAndStart() {
+        // List pages and pick one, then start polling
+        const pagesResp = await new Promise((resolve, reject) => {
+            FB.api('/me/accounts', { fields: 'id,name,access_token,instagram_business_account' }, (resp) => {
+                if (!resp || resp.error) return reject(resp?.error || 'Failed to load pages');
+                resolve(resp);
+            });
+        });
+        const pages = pagesResp.data || [];
+        if (!pages.length) {
+            this.showError('No Facebook Pages found. Ensure pages_show_list permission was granted.');
+            return;
+        }
+
+        // Populate selector
+        this.setupPageSelector(pages);
+
+        // Prefer a page with IG linked, else first
+        let selected = pages.find(p => p.instagram_business_account) || pages[0];
+        this.pageId = selected.id;
+        this.pageAccessToken = selected.access_token;
+        this.igUserId = selected.instagram_business_account?.id || null;
+
+        this.startRealtimeStream();
+    }
+
+    setupPageSelector(pages) {
+        const sel = document.getElementById('pageSelector');
+        if (!sel) return;
+        sel.innerHTML = '';
+        pages.forEach(p => {
+            const opt = document.createElement('option');
+            opt.value = JSON.stringify({ id: p.id, token: p.access_token, ig: p.instagram_business_account?.id || null, name: p.name });
+            opt.textContent = p.name + (p.instagram_business_account ? ' (IG linked)' : '');
+            sel.appendChild(opt);
+        });
+        sel.disabled = false;
+        sel.addEventListener('change', () => {
+            try {
+                const val = JSON.parse(sel.value);
+                this.pageId = val.id;
+                this.pageAccessToken = val.token;
+                this.igUserId = val.ig;
+                this.startRealtimeStream();
+            } catch (e) {}
+        });
+    }
+
+    startRealtimeStream() {
+        // Client-only polling every N ms
+        if (this.pollTimer) {
+            clearInterval(this.pollTimer);
+        }
+
+        const fbLoading = document.getElementById('fbFollowersLoading');
+        const fbContent = document.getElementById('fbFollowersContent');
+        const fbError = document.getElementById('fbFollowersError');
+        const igLoading = document.getElementById('igFollowersLoading');
+        const igContent = document.getElementById('igFollowersContent');
+        const igError = document.getElementById('igFollowersError');
+
+        // Show loading initially
+        [fbLoading, igLoading].forEach(el => el.classList.remove('d-none'));
+        [fbContent, igContent].forEach(el => el.classList.add('d-none'));
+        [fbError, igError].forEach(el => el.classList.add('d-none'));
+
+        const poll = async () => {
+            try {
+                // Facebook Page counts
+                const fb = await new Promise((resolve, reject) => {
+                    FB.api('/' + this.pageId, { fields: 'name,fan_count,followers_count', access_token: this.pageAccessToken }, (resp) => {
+                        if (!resp || resp.error) return reject(resp?.error || 'FB page error');
+                        resolve(resp);
+                    });
+                });
+
+                document.getElementById('fbFollowersCount').textContent = this.formatNumber(fb.followers_count || 0);
+                document.getElementById('fbLikes').textContent = this.formatNumber(fb.fan_count || 0);
+                document.getElementById('fbGrowth').textContent = '+0%';
+                fbLoading.classList.add('d-none');
+                fbContent.classList.remove('d-none');
+
+                // Instagram (if linked)
+                if (this.igUserId) {
+                    const ig = await new Promise((resolve, reject) => {
+                        FB.api('/' + this.igUserId, { fields: 'username,followers_count,media_count', access_token: this.pageAccessToken }, (resp) => {
+                            if (!resp || resp.error) return reject(resp?.error || 'IG error');
+                            resolve(resp);
+                        });
+                    });
+
+                    document.getElementById('igFollowersCount').textContent = this.formatNumber(ig.followers_count || 0);
+                    document.getElementById('igPosts').textContent = this.formatNumber(ig.media_count || 0);
+                    document.getElementById('igGrowth').textContent = '+0%';
+                    igLoading.classList.add('d-none');
+                    igContent.classList.remove('d-none');
+                } else {
+                    igLoading.classList.add('d-none');
+                    igError.classList.remove('d-none');
+                    document.getElementById('igErrorMessage').textContent = 'No Instagram Business account linked to the selected Page';
+                }
+
+                // Combined
+                const fbFollowers = this.parseNumber(document.getElementById('fbFollowersCount').textContent);
+                const igFollowers = this.parseNumber(document.getElementById('igFollowersCount').textContent || '0');
+                document.getElementById('totalFollowers').textContent = this.formatNumber(fbFollowers + igFollowers);
+                this.updateLastSyncTime();
+            } catch (err) {
+                console.error('Polling error', err);
+                fbLoading.classList.add('d-none');
+                fbError.classList.remove('d-none');
+                document.getElementById('fbErrorMessage').textContent = (err && err.message) || 'Error loading data';
+            }
+        };
+
+        // Run now and on interval
+        poll();
+        const interval = this.config.settings.autoRefreshInterval || 10000;
+        this.pollTimer = setInterval(poll, interval);
+    }
+
     setupAutoRefresh() {
         if (this.refreshInterval) {
             clearInterval(this.refreshInterval);
@@ -327,7 +448,20 @@ class SocialMediaDashboard {
         refreshBtn.classList.add('loading-state');
         
         try {
-            await this.loadAllData();
+            if (this.config.demo.enabled) {
+                await this.loadAllData();
+            } else {
+                // Force one poll tick
+                await new Promise((resolve) => {
+                    // call poll once by restarting stream which runs immediately
+                    if (this.pollTimer) {
+                        clearInterval(this.pollTimer);
+                        this.pollTimer = null;
+                    }
+                    this.startRealtimeStream();
+                    resolve();
+                });
+            }
             this.updateLastSyncTime();
             
             // Show success feedback
@@ -339,6 +473,23 @@ class SocialMediaDashboard {
         } finally {
             refreshBtn.classList.remove('loading-state');
         }
+    }
+
+    async bootstrapFromServer() {
+        try {
+            const res = await fetch('/api/status', { credentials: 'include' });
+            const data = await res.json();
+            if (data.authenticated || data.tokenMode) {
+                // We can stream immediately
+                if (data.user?.name) this.userInfo = { name: data.user.name, picture: { data: { url: '' } } };
+                this.showDashboard();
+                this.startRealtimeStream();
+                return;
+            }
+        } catch (e) {
+            // ignore
+        }
+        // Otherwise show login screen (default UI state)
     }
 
     logout() {
@@ -381,9 +532,10 @@ class SocialMediaDashboard {
         FB.getLoginStatus((response) => {
             if (response.status === 'connected') {
                 this.accessToken = response.authResponse.accessToken;
+                this.userAccessToken = response.authResponse.accessToken;
                 this.getUserInfo().then(() => {
                     this.showDashboard();
-                    this.loadAllData();
+                    this.loadPagesAndStart();
                 });
             }
         });
