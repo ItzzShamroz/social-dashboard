@@ -42,7 +42,7 @@ const CONFIG = {
     
     // Demo/Testing Data (for development purposes)
     demo: {
-        enabled: true, // Set to false when using real APIs
+        enabled: false, // Set to false when using real APIs
         facebook: {
             followers: 15420,
             likes: 12850,
@@ -92,4 +92,5 @@ if (CONFIG.settings.enableDebugMode && typeof console !== 'undefined') {
         console.warn('Configuration warnings:', configErrors);
     }
 }
+
 
