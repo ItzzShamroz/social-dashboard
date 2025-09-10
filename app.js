@@ -53,6 +53,29 @@ class SocialMediaDashboard {
         document.getElementById('refreshData').addEventListener('click', () => this.refreshAllData());
     }
 
+    // Exposed to XFBML login button via window.checkLoginState()
+    checkLoginState() {
+        FB.getLoginStatus((response) => this.statusChangeCallback(response));
+    }
+
+    // Handle login status updates
+    async statusChangeCallback(response) {
+        await this.handleLoginResponse(response);
+    }
+
+    // Shared login response handler
+    async handleLoginResponse(response) {
+        if (response && response.status === 'connected' && response.authResponse) {
+            this.accessToken = response.authResponse.accessToken;
+            this.userAccessToken = response.authResponse.accessToken;
+            await this.getUserInfo();
+            this.showDashboard();
+            await this.loadPagesAndStart();
+        } else {
+            this.showError('Facebook login was cancelled or failed');
+        }
+    }
+
     async loginWithFacebook() {
         if (this.config.demo.enabled) {
             // Demo mode - simulate login
@@ -580,4 +603,7 @@ class SocialMediaDashboard {
 // Initialize the application when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     window.socialMediaDashboard = new SocialMediaDashboard();
+    // Bridge global callbacks used by the XFBML login button
+    window.checkLoginState = () => window.socialMediaDashboard.checkLoginState();
+    window.statusChangeCallback = (response) => window.socialMediaDashboard.statusChangeCallback(response);
 });

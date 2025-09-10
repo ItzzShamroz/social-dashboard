@@ -5,15 +5,11 @@ const CONFIG = {
     // Facebook App Configuration
     // Get these from https://developers.facebook.com/
     facebook: {
-        appId: '777554551649291',
-        appSecret: 'YOUR_FACEBOOK_APP_SECRET', // Keep this secure, use only server-side
-        version: 'v18.0',
-        // Scopes needed for Pages + Instagram Graph (ensure your app has these products/permissions):
-        // - pages_show_list (list/manage your Pages)
-        // - pages_read_engagement (read Page fields like followers/likes)
-        // - instagram_basic (read IG user data, including followers_count)
-        // You must add the products/permissions in your app and be a role user to grant them.
-        loginScopes: 'email,public_profile,pages_read_engagement,pages_show_list,instagram_basic'
+        appId: '1149906843668361',
+        appSecret: 'YOUR_FACEBOOK_APP_SECRET', // Not used client-side; do NOT expose real secret
+        version: 'v23.0',
+        // For login-only to avoid invalid scope warnings on unapproved apps
+        loginScopes: 'public_profile,email'
     },
     
     // Instagram Basic Display API Configuration
